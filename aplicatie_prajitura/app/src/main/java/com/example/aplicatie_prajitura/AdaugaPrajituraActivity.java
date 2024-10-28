@@ -55,10 +55,10 @@ public class AdaugaPrajituraActivity extends AppCompatActivity {
                 Prajitura p1 = new Prajitura(numePrajitura,dPret,dCantitate,dataExpirare,areGlazura);
                 //Toast.makeText(getApplicationContext(),p1.toString(),Toast.LENGTH_LONG).show();
 
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra("prajitura1", p1);
-                setResult(RESULT_OK, resultIntent);
-                finish();
+                Intent it = new Intent();
+                it.putExtra("prajitura1", p1);
+                setResult(RESULT_OK, it);
+                finish();//dispare din varful stivei
             }
         });
     }

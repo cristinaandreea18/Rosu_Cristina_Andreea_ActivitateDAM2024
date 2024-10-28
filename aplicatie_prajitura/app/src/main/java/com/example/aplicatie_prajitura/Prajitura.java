@@ -1,9 +1,9 @@
 package com.example.aplicatie_prajitura;
 
-import java.io.Serializable;
-import java.util.Date;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Prajitura implements Serializable {
+public class Prajitura implements Parcelable {
     private String nume;
     private double pret;
     private double cantitate;
@@ -17,6 +17,44 @@ public class Prajitura implements Serializable {
         this.dataExpirare = dataExpirare;
         this.areGlazura = areGlazura;
     }
+
+    //metoda de deserializare
+    protected Prajitura(Parcel in) {
+        nume = in.readString();
+        pret = in.readDouble();
+        cantitate = in.readDouble();
+        dataExpirare = in.readString();
+        byte tmpAreGlazura = in.readByte();
+        areGlazura = tmpAreGlazura == 0 ? null : tmpAreGlazura == 1;
+    }
+
+    //serializare
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(nume);
+        dest.writeDouble(pret);
+        dest.writeDouble(cantitate);
+        dest.writeString(dataExpirare);
+        dest.writeByte((byte) (areGlazura == null ? 0 : areGlazura ? 1 : 2));
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    //cand avem vector de obiecte serializate
+    public static final Creator<Prajitura> CREATOR = new Creator<Prajitura>() {
+        @Override
+        public Prajitura createFromParcel(Parcel in) {
+            return new Prajitura(in);
+        }
+
+        @Override
+        public Prajitura[] newArray(int size) {
+            return new Prajitura[size];
+        }
+    };
 
     public Boolean getAreGlazura() {
         return areGlazura;
