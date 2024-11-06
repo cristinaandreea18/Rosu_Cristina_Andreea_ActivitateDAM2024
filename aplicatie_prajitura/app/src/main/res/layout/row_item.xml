@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/idNumeP"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/idPretP"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+         />
+
+    <TextView
+        android:id="@+id/idCantitateP"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/idDataExpirareP"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+         />
+
+    <CheckBox
+        android:id="@+id/idAreGlazuraP"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="Glazura"
+         />
+</LinearLayout>

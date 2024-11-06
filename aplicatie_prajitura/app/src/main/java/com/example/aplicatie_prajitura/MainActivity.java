@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -54,19 +57,11 @@ private List<Prajitura> prajituri = null;
         @Override
         protected void onActivityResult(int requestCode, int resultCode, Intent data) {
             super.onActivityResult(requestCode, resultCode, data);
-
             if (requestCode == 1811 ) {
-                if(resultCode == RESULT_OK)
-                {
+                if(resultCode == RESULT_OK) {
                     Prajitura prajitura = data.getParcelableExtra("prajitura1");
                     prajituri.add(prajitura);
-                    //prajituri.add(prajitura);
-                    //TextView tv = findViewById()
-                    //tv.setText(prajitura.toString()
-//                if (prajitura != null) {
-//                    Toast.makeText(this, prajitura.toString(), Toast.LENGTH_LONG).show();
-//                }
-            }
+                }
             }
     }
 }

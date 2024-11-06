@@ -61,5 +61,27 @@ public class AdaugaPrajituraActivity extends AppCompatActivity {
                 finish();//dispare din varful stivei
             }
         });
+
+        Intent it = getIntent();
+        if(it.hasExtra("prajitura1")){
+            Prajitura p2 = it.getParcelableExtra("prajitura1");
+            EditText etNume = findViewById(R.id.idEtNumePrajitura);
+            EditText etPret = findViewById(R.id.idEtPret);
+            EditText etCantitate = findViewById(R.id.idEtCantitate);
+            DatePicker dataExpirareDp = findViewById(R.id.idDpDataExpirare);
+            CheckBox checkBoxAreGlazura = findViewById(R.id.idCbAreGlazura);
+
+            etNume.setText(p2.getNume());
+            etPret.setText("" + p2.getPret());
+            etCantitate.setText("" + p2.getCantitate());
+
+            String[]split = p2.getDataExpirare().split("/");
+            int zi = Integer.parseInt(split[0]);
+            int luna = Integer.parseInt(split[1]);
+            int an = Integer.parseInt(split[2]);
+
+            dataExpirareDp.init(an,luna-1,zi,null);
+            checkBoxAreGlazura.setChecked(p2.getAreGlazura());
+        }
     }
 }
