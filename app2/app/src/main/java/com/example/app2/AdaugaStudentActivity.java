@@ -75,5 +75,34 @@ public class AdaugaStudentActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        Intent it = getIntent();
+        if(it.hasExtra("student")) {
+            Student s = it.getParcelableExtra("student");
+            EditText etNumeS = findViewById(R.id.idEtNume);
+            etNumeS.setText(s.getNume());
+
+           RadioGroup rgGen = findViewById(R.id.idRgGen);
+           String gen = s.getGen();
+           if("Masculin".equals(gen)) {
+               ((RadioButton)findViewById(R.id.idRbMasculin)).setChecked(true);
+           }
+           else
+               if("Feminin".equals(gen)) {
+                   ((RadioButton)findViewById(R.id.idRbFeminin)).setChecked(true);
+               }
+
+            Spinner spAn = findViewById(R.id.idSpAnStudiu);
+            String an = String.valueOf(s.getAnStudiu());
+            spAn.setSelection(adapter1.getPosition(an));
+
+            Spinner spCursS = findViewById(R.id.idSpCurs);
+            String curs = String.valueOf(s.getCurs());
+            spCursS.setSelection(adapter1.getPosition(curs));
+
+            RatingBar rbRating = findViewById(R.id.idRbRating);
+            rbRating.setRating(s.getRating());
+        }
+
     }
 }

@@ -26,4 +26,13 @@
         android:text="Lista Studenti"
         app:layout_constraintStart_toStartOf="@+id/idMainBtn"
         app:layout_constraintTop_toBottomOf="@+id/idMainBtn" />
+
+    <Button
+        android:id="@+id/idBtnActivity2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Activitate 2"
+        app:layout_constraintStart_toStartOf="@+id/idBtnListaStudenti"
+        app:layout_constraintTop_toBottomOf="@+id/idBtnListaStudenti" />
 </androidx.constraintlayout.widget.ConstraintLayout>

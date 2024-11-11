@@ -20,7 +20,9 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.List;
 
 public class ListaStudenti extends AppCompatActivity {
-private List<Student> studenti =null;
+private List<Student> studenti = null;
+private int isModificat = 0;
+private StudentAdapter adapter = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,13 +39,28 @@ private List<Student> studenti =null;
         studenti = it.getParcelableArrayListExtra("listaStudenti");
 
         ListView lvStudenti = findViewById(R.id.idLvStudenti);
-        ArrayAdapter<Student> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_activated_1,studenti);
-        lvStudenti.setAdapter(adapter);
+//        ArrayAdapter<Student> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_activated_1,studenti);
+//        lvStudenti.setAdapter(adapter);
+         adapter = new StudentAdapter(getApplicationContext(),R.layout.row_item,studenti);
+         lvStudenti.setAdapter(adapter);
 
         lvStudenti.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(),studenti.get(i).toString(),Toast.LENGTH_LONG).show();
+                Intent it = new Intent(getApplicationContext(), AdaugaStudentActivity.class);
+                it.putExtra("student",studenti.get(i));
+                isModificat = i;
+                startActivityForResult(it,200);
+                Toast.makeText(getApplicationContext(),studenti.get(i).toString(),Toast.LENGTH_LONG);
+            }
+        });
+
+        lvStudenti.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                studenti.remove(i);
+                adapter.notifyDataSetChanged();
+                return false;
             }
         });
     }

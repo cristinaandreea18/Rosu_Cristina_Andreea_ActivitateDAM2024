@@ -47,6 +47,18 @@ private List<Student> studenti = null;
                 startActivity(it);
             }
         });
+
+        Button btnActivitate2 = findViewById(R.id.idBtnActivity2);
+        btnActivitate2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Intent it = new Intent(getApplicationContext(), MainActivity2.class);
+               //afisare materii importante de programare
+                String[]materii = getResources().getStringArray(R.array.cursuri);
+                it.putExtra("materii", materii);
+                startActivity(it);
+            }
+        });
     }
 
     @Override
