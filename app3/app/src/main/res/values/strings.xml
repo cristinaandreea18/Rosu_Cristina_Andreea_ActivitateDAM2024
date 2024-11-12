@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">app3</string>
+    <string-array name="specializari">
+        <item>Cibe</item>
+        <item>Stat</item>
+        <item>Info</item>
+    </string-array>
+
+</resources>
