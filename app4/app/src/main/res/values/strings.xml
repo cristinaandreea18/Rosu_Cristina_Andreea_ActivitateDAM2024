@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">app4</string>
+    <string-array name="categorii">
+        <item>Lactate</item>
+        <item>Patiserie</item>
+        <item>Bauturi</item>
+        <item>Mezeluri</item>
+    </string-array>
+</resources>
