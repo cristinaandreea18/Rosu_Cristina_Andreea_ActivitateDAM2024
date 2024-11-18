@@ -52,6 +52,15 @@ private List<Prajitura> prajituri = null;
                 startActivity(it);
             }
         });
+
+        Button listaImagini = findViewById(R.id.idBtnImagini);
+        listaImagini.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(getApplicationContext(), ListaImaginiActivity.class);
+                startActivity(it);
+            }
+        });
     }
 
         @Override

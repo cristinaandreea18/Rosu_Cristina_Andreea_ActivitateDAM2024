@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="29dp"
         android:text="Alege ceva dulce"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -36,5 +36,15 @@
         android:text="Button"
         app:layout_constraintEnd_toEndOf="@+id/idButonPrincipal"
         app:layout_constraintTop_toBottomOf="@+id/idButonPrincipal" />
+
+    <Button
+        android:id="@+id/idBtnImagini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="48dp"
+        android:text="Lista imagini"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

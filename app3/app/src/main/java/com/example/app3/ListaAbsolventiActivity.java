@@ -56,7 +56,7 @@ private int isModificat = 0;
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //Toast.makeText(getApplicationContext(),absolventi.get(i).toString(),Toast.LENGTH_LONG);
+                //Toast.makeText(getApplicationContext(),absolventi.get(i).toString(),Toast.LENGTH_LONG).show();
                 Intent it = new Intent(getApplicationContext(), AdaugaAbsolvent.class);
                 it.putExtra("absolvent",absolventi.get(i));
                 isModificat = i;
