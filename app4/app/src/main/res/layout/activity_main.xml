@@ -11,7 +11,7 @@
         android:id="@+id/idBtnMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
+        android:layout_marginEnd="1dp"
         android:layout_marginBottom="37dp"
         android:text="Button"
         app:layout_constraintBottom_toTopOf="@+id/idBtnLista"
@@ -21,9 +21,19 @@
         android:id="@+id/idBtnLista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="136dp"
-        android:layout_marginBottom="270dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="50dp"
         android:text="List"
+        app:layout_constraintBottom_toTopOf="@+id/idBtnListaImaginiProduse"
+        app:layout_constraintEnd_toEndOf="@+id/idBtnListaImaginiProduse" />
+
+    <Button
+        android:id="@+id/idBtnListaImaginiProduse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="89dp"
+        android:layout_marginBottom="172dp"
+        android:text="Lista Imagini Produse"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

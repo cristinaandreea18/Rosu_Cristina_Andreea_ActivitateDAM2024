@@ -49,6 +49,15 @@ private List<Produs>produse =null;
                 startActivity(it);
             }
         });
+
+        Button btnListaImagini = findViewById(R.id.idBtnListaImaginiProduse);
+        btnListaImagini.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(getApplicationContext(), ListaImaginiActivity.class);
+                startActivity(it);
+            }
+        });
     }
 
     @Override
