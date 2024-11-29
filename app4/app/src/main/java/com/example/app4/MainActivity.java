@@ -30,7 +30,6 @@ private List<Produs>produse =null;
             return insets;
         });
 
-
         Button mainBtn = findViewById(R.id.idBtnMain);
         mainBtn.setOnClickListener(new View.OnClickListener() {
             @Override

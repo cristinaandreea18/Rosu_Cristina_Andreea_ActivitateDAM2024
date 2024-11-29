@@ -6,4 +6,11 @@
         <item>Bauturi</item>
         <item>Mezeluri</item>
     </string-array>
+    <string name="menu_item_option1">Add Product</string>
+    <string name="menu_item_option2">View Product List</string>
+    <string name="menu_item_option3">View Product Images</string>
+    <string name="menu_item_option4">Rating Product</string>
+    <string name="btn_like">Like</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_dislike">Dislike</string>
 </resources>

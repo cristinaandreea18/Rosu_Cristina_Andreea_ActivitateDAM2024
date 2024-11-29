@@ -1,22 +1,20 @@
 package com.example.app4;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.util.List;
 
-public class AdapterImagine extends BaseAdapter {
+public class AdapterImagine2 extends BaseAdapter {
     private List<ImagineDomeniu> imagini=null;
     private Context ctx;
     private int resursaLayout;
 
-    public AdapterImagine(List<ImagineDomeniu> imagini, Context ctx, int resursaLayout) {
+    public AdapterImagine2(List<ImagineDomeniu> imagini, Context ctx, int resursaLayout) {
         this.imagini = imagini;
         this.ctx = ctx;
         this.resursaLayout = resursaLayout;
@@ -43,13 +41,9 @@ public class AdapterImagine extends BaseAdapter {
         View v = inf.inflate(resursaLayout,viewGroup,false);
 
         ImagineDomeniu img = (ImagineDomeniu) getItem(i);
+        ImageView imgIV = v.findViewById(R.id.imageView);
 
-        TextView descriereTV = v.findViewById(R.id.idTVDescriereProdus);
-        ImageView imagineIV = v.findViewById(R.id.idIVImagineProdus);
-
-        imagineIV.setImageBitmap(img.getImagine());
-        descriereTV.setText(img.getTextAfisat());
-
+        imgIV.setImageBitmap(img.getImagine());
         return v;
     }
 }
