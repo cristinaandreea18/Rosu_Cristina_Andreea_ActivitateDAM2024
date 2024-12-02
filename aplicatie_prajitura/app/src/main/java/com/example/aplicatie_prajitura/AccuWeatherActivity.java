@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -43,6 +45,11 @@ public class AccuWeatherActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        Spinner spDurata = findViewById(R.id.idSpinnerDurata);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getApplicationContext(),
+                R.array.durata_zile, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        spDurata.setAdapter(adapter);
 
         Executor executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.myLooper());
@@ -80,10 +87,19 @@ public class AccuWeatherActivity extends AppCompatActivity {
                             JSONObject obiect = vector.getJSONObject(0);
                             cheieOras = obiect.getString("Key");
 
+                            String durataStr = spDurata.getSelectedItem().toString();
+                            int durata = Integer.parseInt(durataStr);
+
                             TextView orasTV = findViewById(R.id.idKeyTV);
 
-                            String urlWeather = "http://dataservice.accuweather.com/forecasts/v1/daily/1day/" + cheieOras
-                                    + "?apikey=" + apiKey + "&metric=true";
+                            String urlWeather= null;
+                            if (durata==1){
+                            urlWeather = "http://dataservice.accuweather.com/forecasts/v1/daily/1day/" + cheieOras
+                                    + "?apikey=" + apiKey + "&metric=true";}
+                            else {
+                                urlWeather = "http://dataservice.accuweather.com/forecasts/v1/daily/5day/" + cheieOras
+                                        + "?apikey=" + apiKey + "&metric=true";
+                            }
                             apiURL = new URL(urlWeather);
                             con = (HttpURLConnection) apiURL.openConnection();
                             con.setRequestMethod("GET");
@@ -99,17 +115,27 @@ public class AccuWeatherActivity extends AppCompatActivity {
                             con.disconnect();
 
                             JSONObject object = new JSONObject(response.toString());
-                            JSONObject dailyForecasts = object.getJSONArray("DailyForecasts").getJSONObject(0);
-                            JSONObject temperature = dailyForecasts.getJSONObject("Temperature");
-                            min = temperature.getJSONObject("Minimum").getString("Value");
-                            max = temperature.getJSONObject("Maximum").getString("Value");
+                            JSONArray dailyForecasts = object.getJSONArray("DailyForecasts");
+                            StringBuilder rezultat = new StringBuilder();
+
+                            for (int i = 0; i < dailyForecasts.length(); i++) {
+                                JSONObject forecast = dailyForecasts.getJSONObject(i);
+                                JSONObject temperature = forecast.getJSONObject("Temperature");
+                                String min = temperature.getJSONObject("Minimum").getString("Value");
+                                String max = temperature.getJSONObject("Maximum").getString("Value");
+                                String data = forecast.getString("Date");
+
+                                rezultat.append("Data: ").append(data)
+                                        .append("\nMin: ").append(min)
+                                        .append("\nMax: ").append(max)
+                                        .append("\n\n");
+                            }
 
                             handler.post(new Runnable() {
                                 @Override
                                 public void run() {
                                     TextView tvCod = findViewById(R.id.idKeyTV);
-                                    tvCod.setText("Cheie oras:" + cheieOras + "\ntemperatura minima:"
-                                            + min + "\ntemperatura maxima:" + max );
+                                    tvCod.setText("Cheie oras:" + cheieOras + "\n" + rezultat.toString());
                                 }
                             });
 

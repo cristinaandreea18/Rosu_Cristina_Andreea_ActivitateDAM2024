@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">aplicatie_prajitura</string>
+    <string-array name="durata_zile">
+        <item>1</item>
+        <item>5</item>
+    </string-array>
+    <string name="menu_item_option1">Adauga Prajitura</string>
+    <string name="menu_item_option2">Lista Prajituri</string>
+    <string name="menu_item_option3">Lista Imagini</string>
+    <string name="menu_item_option4">AccuWeather APIs</string>
 </resources>
