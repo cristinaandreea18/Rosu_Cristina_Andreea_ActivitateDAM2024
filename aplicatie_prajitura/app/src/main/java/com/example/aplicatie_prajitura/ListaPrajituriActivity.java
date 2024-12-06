@@ -2,9 +2,12 @@ package com.example.aplicatie_prajitura;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -14,13 +17,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.room.Database;
+import androidx.room.Room;
 
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class ListaPrajituriActivity extends AppCompatActivity {
     private List<Prajitura> prajituri;
     private int isModificat =0;
     private PrajituraAdapter adapter = null;
+    PrajituraDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +41,32 @@ public class ListaPrajituriActivity extends AppCompatActivity {
             return insets;
         });
 
-        Intent it = getIntent();
-        prajituri = it.getParcelableArrayListExtra("listaPrajituri1");
+        //Intent it = getIntent();
+        //prajituri = it.getParcelableArrayListExtra("listaPrajituri1");
 
+        database = Room.databaseBuilder(getApplicationContext(),PrajituraDatabase.class,"Prajituri.db").build();
         ListView lv = findViewById(R.id.prajituriLV);
+        Executor executor = Executors.newSingleThreadExecutor();
+        Handler handler = new Handler(Looper.myLooper());
+
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                prajituri = database.daoPrajitura().getPrajituri();
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        adapter = new PrajituraAdapter(prajituri,getApplicationContext(),R.layout.row_item);
+                        lv.setAdapter(adapter);
+                    }
+                });
+            }
+        });
+
 
 //      ArrayAdapter<Prajitura> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,prajituri);
 //      lv.setAdapter(adapter);
 
-        adapter = new PrajituraAdapter(prajituri,getApplicationContext(),R.layout.row_item);
-        lv.setAdapter(adapter);
 
 //        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
@@ -65,8 +89,22 @@ public class ListaPrajituriActivity extends AppCompatActivity {
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                prajituri.remove(i);
-                adapter.notifyDataSetChanged();
+                Executor executor = Executors.newSingleThreadExecutor();
+                Handler handler = new Handler(Looper.myLooper());
+
+                executor.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        database.daoPrajitura().deletePrajitura(prajituri.get(i));
+                        handler.post(new Runnable() {
+                        @Override
+                            public void run() {
+                                prajituri.remove(i);
+                                adapter.notifyDataSetChanged();
+                            }
+                        });
+                    }
+                });
                 return false;
             }
         });
@@ -77,11 +115,26 @@ public class ListaPrajituriActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode==RESULT_OK){
             if(requestCode==200) {
-                prajituri.set(isModificat,data.getParcelableExtra("prajitura1"));
-                adapter.notifyDataSetChanged();
-            }
+                Prajitura prajituraModificata = data.getParcelableExtra("prajitura1");
 
+                Executor executor = Executors.newSingleThreadExecutor();
+                Handler handler = new Handler(Looper.myLooper());
+
+                executor.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        database.daoPrajitura().updatePrajitura(prajituraModificata);
+
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                prajituri.set(isModificat,prajituraModificata);
+                                adapter.notifyDataSetChanged();
+                            }
+                        });
+                    }
+                });
+            }
         }
     }
-
 }

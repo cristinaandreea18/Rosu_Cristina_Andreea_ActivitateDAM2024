@@ -41,6 +41,7 @@ private List<ImagineDomeniu>lista = null;
             return insets;
         });
 
+
         List<String> linkuriImagini = new ArrayList<>();
         //alba-ca-zapada
         linkuriImagini.add("https://www.bucataras.ro/uploads/modules/news/52258/656x440_prajitura-alba-ca-zapada-268448.jpg");

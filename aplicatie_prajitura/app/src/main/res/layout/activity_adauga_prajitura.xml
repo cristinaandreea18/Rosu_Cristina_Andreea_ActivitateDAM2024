@@ -122,7 +122,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="331dp"
             android:orientation="horizontal">
 
             <TextView
@@ -134,8 +134,8 @@
 
             <DatePicker
                 android:id="@+id/idDpDataExpirare"
-                android:layout_width="wrap_content"
-                android:layout_height="400dp"
+                android:layout_width="300dp"
+                android:layout_height="350dp"
                 android:calendarViewShown="true"
                 android:scaleX="0.8"
                 android:scaleY="0.8"
@@ -155,7 +155,8 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Adauga prajitura" />
+            android:text="Adauga prajitura"
+            android:onClick="crearePrajitura"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,14 @@ package com.example.aplicatie_prajitura;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "Prajituri")
 public class Prajitura implements Parcelable {
+    @PrimaryKey
+    @NonNull
     private String nume;
     private double pret;
     private double cantitate;
