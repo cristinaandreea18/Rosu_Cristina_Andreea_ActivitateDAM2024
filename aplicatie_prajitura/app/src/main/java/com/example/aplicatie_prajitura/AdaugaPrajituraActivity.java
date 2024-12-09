@@ -16,6 +16,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.room.Room;
 
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -86,6 +91,21 @@ public class AdaugaPrajituraActivity extends AppCompatActivity {
         executor.execute(new Runnable() {
             @Override
             public void run() {
+                try{
+                    FileOutputStream file;
+                    file =openFileOutput("prajituri.txt",MODE_APPEND);
+                    OutputStreamWriter output = new OutputStreamWriter(file);
+                    BufferedWriter writer = new BufferedWriter(output);
+                    writer.write(p1.toString());
+                    writer.close();
+                    output.close();
+                    file.close();
+                } catch (FileNotFoundException e) {
+                    throw new RuntimeException(e);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
                 database.daoPrajitura().insert(p1);
             }
         });

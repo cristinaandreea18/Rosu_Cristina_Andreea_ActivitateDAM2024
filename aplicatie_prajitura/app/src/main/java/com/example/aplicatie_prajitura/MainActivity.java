@@ -70,6 +70,15 @@ private List<Prajitura> prajituri = null;
                 startActivity(it);
             }
         });
+
+        Button btnCitire = findViewById(R.id.idBtnSharedPreferences);
+        btnCitire.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(getApplicationContext(),SharedPreferencesActivity.class);
+                startActivity(it);
+            }
+        });
     }
 
         @Override

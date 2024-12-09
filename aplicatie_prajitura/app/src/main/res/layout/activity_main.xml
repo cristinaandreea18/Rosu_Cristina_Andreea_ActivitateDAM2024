@@ -11,7 +11,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="128dp"
         android:layout_marginBottom="35dp"
         android:text="Bine te-am gasit la cofetarie!"
         app:layout_constraintBottom_toTopOf="@+id/idButonPrincipal"
@@ -22,7 +22,7 @@
     <Button
         android:id="@+id/idButonPrincipal"
         android:layout_width="156dp"
-        android:layout_height="55dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="24dp"
         android:text="Adauga ceva dulce"
         app:layout_constraintBottom_toTopOf="@+id/idButonPrajituri"
@@ -56,11 +56,22 @@
         android:id="@+id/idBtnApi"
         android:layout_width="149dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="267dp"
+        android:layout_marginBottom="32dp"
         android:text="API"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/idBtnSharedPreferences"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idBtnImagini" />
+
+    <Button
+        android:id="@+id/idBtnSharedPreferences"
+        android:layout_width="142dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="178dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idBtnApi" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

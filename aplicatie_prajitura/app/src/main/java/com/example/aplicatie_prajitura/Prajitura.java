@@ -103,6 +103,14 @@ public class Prajitura implements Parcelable {
         this.dataExpirare = dataExpirare;
     }
 
+    public String getKey(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.nume);
+        sb.append("-");
+        sb.append(this.pret);
+        return sb.toString();
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Prajitura{");

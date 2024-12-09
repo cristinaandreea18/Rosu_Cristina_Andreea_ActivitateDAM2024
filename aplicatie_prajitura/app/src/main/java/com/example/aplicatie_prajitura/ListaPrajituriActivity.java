@@ -1,6 +1,7 @@
 package com.example.aplicatie_prajitura;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -95,12 +96,17 @@ public class ListaPrajituriActivity extends AppCompatActivity {
                 executor.execute(new Runnable() {
                     @Override
                     public void run() {
-                        database.daoPrajitura().deletePrajitura(prajituri.get(i));
+                        //database.daoPrajitura().deletePrajitura(prajituri.get(i));
                         handler.post(new Runnable() {
                         @Override
                             public void run() {
-                                prajituri.remove(i);
-                                adapter.notifyDataSetChanged();
+                                //prajituri.remove(i);
+                                //adapter.notifyDataSetChanged();
+
+                            SharedPreferences sp = getSharedPreferences("obiecteFav",MODE_PRIVATE);
+                            SharedPreferences.Editor ed = sp.edit();
+                            ed.putString(prajituri.get(i).getKey(),prajituri.get(i).toString());
+                            ed.commit();
                             }
                         });
                     }
