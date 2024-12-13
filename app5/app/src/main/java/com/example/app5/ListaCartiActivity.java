@@ -27,6 +27,7 @@ private List<Carte> carti = null;
 private AdapterCarte adapterCarte = null;
 private int isModificat = 0;
 private CarteDatabase database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

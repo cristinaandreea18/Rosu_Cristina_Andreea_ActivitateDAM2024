@@ -27,6 +27,7 @@ public class SharedPreferencesActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         SharedPreferences sp = getSharedPreferences("obiecteFav",MODE_PRIVATE);
         Map<String,String> dictionar = (Map<String, String>) sp.getAll();
         List<String> cartiFav = new ArrayList<>();

@@ -10,6 +10,7 @@ import java.util.List;
 
 @Dao
 public interface DAOCarte {
+
     @Insert
     void insert(Carte carte);
     @Query("select * from Carti")

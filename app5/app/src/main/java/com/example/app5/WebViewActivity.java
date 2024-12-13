@@ -28,5 +28,6 @@ public class WebViewActivity extends AppCompatActivity {
 
         WebView wv = findViewById(R.id.idWebView);
         wv.loadUrl(link);
+
     }
 }

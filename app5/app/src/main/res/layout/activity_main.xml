@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/idBtnListaCarti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="11dp"
+        android:text="@string/btnListaCarti"
+        app:layout_constraintEnd_toEndOf="@+id/idBtnAdaugareCarte"
+        app:layout_constraintTop_toBottomOf="@+id/idBtnAdaugareCarte" />
+
+    <Button
+        android:id="@+id/idBtnAdaugareCarte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="108dp"
+        android:text="@string/btnAdauga"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/idBtnListaImagini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/btnListaImagini"
+        app:layout_constraintStart_toStartOf="@+id/idBtnListaCarti"
+        app:layout_constraintTop_toBottomOf="@+id/idBtnListaCarti" />
+
+    <Button
+        android:id="@+id/idBtnAPI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/btnAPI"
+        app:layout_constraintStart_toStartOf="@+id/idBtnListaImagini"
+        app:layout_constraintTop_toBottomOf="@+id/idBtnListaImagini" />
+
+    <Button
+        android:id="@+id/idBtnSharedPreferences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="37dp"
+        android:text="@string/btnShared"
+        app:layout_constraintBottom_toTopOf="@+id/idBtnAdaugareCarte"
+        app:layout_constraintStart_toStartOf="@+id/idBtnAdaugareCarte" />
+</androidx.constraintlayout.widget.ConstraintLayout>

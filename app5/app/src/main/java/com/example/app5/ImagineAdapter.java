@@ -21,7 +21,6 @@ public class ImagineAdapter extends BaseAdapter {
         this.resursaLayout = resursaLayout;
     }
 
-
     @Override
     public int getCount() {
         return imagini.size();

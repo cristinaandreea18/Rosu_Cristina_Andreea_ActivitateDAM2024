@@ -15,7 +15,6 @@ public class Carte implements Parcelable {
     private String autor;
     private String editura;
     private float pret;
-
     private float rating;
 
     public Carte(String nume, String autor, String editura, float pret, float rating) {

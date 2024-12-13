@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">app5</string>
+    <string name="btnAdauga">Adauga Carte</string>
+    <string name="btnListaCarti">Lista Carti</string>
+    <string name="btnListaImagini">Lista Imagini</string>
+    <string name="btnAdaugaActivitate">Adauga Carte</string>
+    <string name="btnCautaID">Cauta</string>
+    <string name="btnAPI">API</string>
+    <string name="btnShared">Shared Preferences</string>
+
+
+    <string name="nume">Nume</string>
+    <string name="autor">Autor</string>
+    <string name="editura">Editura</string>
+    <string name="pret">Pret</string>
+    <string name="rating">Rating</string>
+    <string name="Cod">Cod</string>
+    <string name="Carte_Autori">Carte/Autori</string>
+
+    <string-array name="Edituri">
+        <item>Leda Edge</item>
+        <item>Nemira</item>
+        <item>Litera</item>
+        <item>BOOKZONE</item>
+        <item>Trei</item>
+    </string-array>
+
+    <string-array name="optiuni">
+        <item>Cautare Carte dupa Cod</item>
+        <item>Cautare autori dupa nume</item>
+    </string-array>
+    <string name="optiune">Optiune</string>
+</resources>

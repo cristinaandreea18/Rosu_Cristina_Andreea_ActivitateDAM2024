@@ -29,6 +29,7 @@ import java.util.concurrent.Executors;
 
 public class AdaugaCarteActivity extends AppCompatActivity {
     private CarteDatabase database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

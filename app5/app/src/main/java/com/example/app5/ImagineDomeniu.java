@@ -35,5 +35,6 @@ public class ImagineDomeniu {
 
     public void setLink(String link) {
         this.link = link;
+
     }
 }

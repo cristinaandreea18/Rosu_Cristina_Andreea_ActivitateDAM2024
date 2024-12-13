@@ -39,13 +39,13 @@ public class AdapterCarte extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         LayoutInflater inf = LayoutInflater.from(ctx);
-        View view2 = inf.inflate(resursaLayout,viewGroup,false);
+        View v = inf.inflate(resursaLayout,viewGroup,false);
 
-        TextView nume = view2.findViewById(R.id.idTVNumeCarte);
-        TextView autor = view2.findViewById(R.id.idTVAutorCarte);
-        TextView editura = view2.findViewById(R.id.idTVEdituraCarte);
-        TextView pret = view2.findViewById(R.id.idTVPretCarte);
-        TextView rating = view2.findViewById(R.id.idTVRatingCarte);
+        TextView nume = v.findViewById(R.id.idTVNumeCarte);
+        TextView autor = v.findViewById(R.id.idTVAutorCarte);
+        TextView editura = v.findViewById(R.id.idTVEdituraCarte);
+        TextView pret = v.findViewById(R.id.idTVPretCarte);
+        TextView rating = v.findViewById(R.id.idTVRatingCarte);
 
         Carte c = (Carte) getItem(i);
         nume.setText(c.getNume());
@@ -54,6 +54,6 @@ public class AdapterCarte extends BaseAdapter {
         pret.setText(""+c.getPret());
         rating.setText(""+c.getRating());
 
-        return view2;
+        return v;
     }
 }

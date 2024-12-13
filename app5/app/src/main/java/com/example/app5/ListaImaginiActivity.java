@@ -85,6 +85,7 @@ public class ListaImaginiActivity extends AppCompatActivity {
                                 Intent it = new Intent(getApplicationContext(), WebViewActivity.class);
                                 it.putExtra("link",lista.get(i).getLink());
                                 startActivity(it);
+
                             }
                         });
                     }
