@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">app7</string>
+    <string name="btnInsert">Insert</string>
+    <string name="btnSelect">Select</string>
+    <string name="btnPreferinte">Shared Preferences</string>
+    <string name="btnAPI">API</string>
+    <string name="btnImagini">Imagini</string>
+
+    <string-array name="arome">
+        <item>vanilie</item>
+        <item>cafea</item>
+        <item>fructe</item>
+    </string-array>
+
+    <string name="aroma">Aroma</string>
+    <string name="timp">Timp Ardere</string>
+    <string name="fitiluri">Numar Fitiluri</string>
+    <string name="cod">Cod</string>
+    <string name="descriere">Descriere</string>
+    <string name="pokemon">Pokemon</string>
+    <string name="descrierePokemon">Descriere Pokemon</string>
+
+    <string name="adauga">Adauga Lumanare</string>
+    <string name="cauta">Cauta</string>
+</resources>
