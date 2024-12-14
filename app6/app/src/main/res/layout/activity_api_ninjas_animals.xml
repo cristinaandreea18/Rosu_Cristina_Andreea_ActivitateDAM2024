@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ApiNinjasAnimalsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/idTVCheie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cheie" />
+
+        <EditText
+            android:id="@+id/idETCheie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="@string/cheie" />
+ss
+        <Button
+            android:id="@+id/idBtnCautaDupaCheie"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cauta" />
+
+        <TextView
+            android:id="@+id/idTVRezultat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:hint="@string/rezultat" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
