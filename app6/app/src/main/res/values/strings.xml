@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">app6</string>
+    <string name="nume_stapan">Nume stapan</string>
+    <string name="rasa">Rasa</string>
+    <string name="nume_pisica">Nume pisica</string>
+    <string name="gen">Gen</string>
+    <string name="gen_fem">Femela</string>
+    <string name="gen_masc">Mascul</string>
+
+    <string name="cheie">Cheie</string>
+    <string name="cauta">Cauta</string>
+    <string name="rezultat">Rezultat</string>
+
+    <string-array name="rase">
+        <item>British Shorthair</item>
+        <item>Ragdoll</item>
+        <item>Maine Coone</item>
+        <item>Calico</item>
+        <item>Scottish Fold</item>
+        <item>Pisica de pe strada</item>
+    </string-array>
+
+
+    <string name="adauga">Adauga Pisica</string>
+    <string name="btnMain">Adauga Pisica</string>
+    <string name="btnLista">Lista Pisici</string>
+    <string name="btnAPI">API</string>
+    <string name="btnImagini">Imagini</string>
+    <string name="btnPisiciFav">Pisici Favorite</string>
+</resources>
