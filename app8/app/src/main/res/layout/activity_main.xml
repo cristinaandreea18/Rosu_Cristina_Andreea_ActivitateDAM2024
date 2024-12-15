@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/idBtnMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="191dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/btnMain"
+        app:layout_constraintEnd_toEndOf="@+id/idBtnLista"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/idBtnLista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="1dp"
+        android:text="@string/btnLista"
+        app:layout_constraintEnd_toEndOf="@+id/idBtnAPI"
+        app:layout_constraintTop_toBottomOf="@+id/idBtnMain" />
+
+    <Button
+        android:id="@+id/idBtnAPI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="@string/btnAPI"
+        app:layout_constraintStart_toStartOf="@+id/idBtnListaImagini"
+        app:layout_constraintTop_toBottomOf="@+id/idBtnLista" />
+
+    <Button
+        android:id="@+id/idBtnListaImagini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="22dp"
+        android:text="@string/btnListaImagini"
+        app:layout_constraintStart_toStartOf="@+id/idBtnSP"
+        app:layout_constraintTop_toBottomOf="@+id/idBtnAPI" />
+
+    <Button
+        android:id="@+id/idBtnSP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="60dp"
+        android:text="Shared Preferences"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idBtnListaImagini" />
+</androidx.constraintlayout.widget.ConstraintLayout>

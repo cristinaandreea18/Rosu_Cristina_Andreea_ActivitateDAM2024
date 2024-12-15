@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">app8</string>
+    <string name="btnMain">Adauga Marker</string>
+    <string name="btnLista">Lista Markere</string>
+    <string name="btnAPI">API</string>
+    <string name="btnListaImagini">Lista Imagini</string>
+
+
+    <string name="codCuloare">Cod culoare</string>
+    <string name="marca">Marca</string>
+    <string name="permanent">Este permanent</string>
+    <string name="categorie">Categorie</string>
+    <string name="descriere">Descriere</string>
+
+    <string-array name="marca_marker">
+        <item>Stabilo</item>
+        <item>DACO</item>
+        <item>Faber Castell</item>
+        <item>Pelikan</item>
+        <item>Maped</item>
+    </string-array>
+</resources>
