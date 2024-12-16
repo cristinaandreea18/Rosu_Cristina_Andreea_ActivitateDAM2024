@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">app10</string>
+    <string name="id">Id</string>
+    <string name="destinatie">Destinatie</string>
+    <string name="distanta">Distanta</string>
+    <string name="manual">Manual</string>
+
+    <string name="afisare">Rezultat</string>
+
+    <string name="btnSalveaza">Salveaza</string>
+    <string name="btnIncarca">Incarca</string>
+    <string name="btnStergeTot">Sterge tot</string>
+
+
+</resources>
