@@ -76,6 +76,15 @@ private List<Lumanare> lumanari = null;
                 startActivity(it);
             }
         });
+
+        Button btnXML = findViewById(R.id.idBtnXML);
+        btnXML.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(getApplicationContext(), LumanareXMLActivity.class);
+                startActivity(it);
+            }
+        });
     }
 
     @Override

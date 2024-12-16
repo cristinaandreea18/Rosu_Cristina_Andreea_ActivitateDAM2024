@@ -31,7 +31,7 @@
         android:id="@+id/idBtnImagini"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
+        android:layout_marginStart="39dp"
         android:layout_marginBottom="37dp"
         android:text="@string/btnImagini"
         app:layout_constraintBottom_toTopOf="@+id/idBtnPreferinte"
@@ -41,7 +41,7 @@
         android:id="@+id/idBtnAPI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
+        android:layout_marginStart="39dp"
         android:layout_marginTop="18dp"
         android:text="@string/btnAPI"
         app:layout_constraintStart_toStartOf="@+id/idBtnPreferinte"
@@ -56,4 +56,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/idBtnXML"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="45dp"
+        android:text="XML"
+        app:layout_constraintStart_toStartOf="@+id/idBtnAPI"
+        app:layout_constraintTop_toBottomOf="@+id/idBtnAPI" />
 </androidx.constraintlayout.widget.ConstraintLayout>
