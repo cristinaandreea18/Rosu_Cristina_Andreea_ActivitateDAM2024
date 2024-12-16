@@ -75,6 +75,15 @@ private List<Marker>markere = null;
                 startActivity(it);
             }
         });
+
+        Button btnXML = findViewById(R.id.idBtnXML);
+        btnXML.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(getApplicationContext(), MarkerXMLActivity.class);
+                startActivity(it);
+            }
+        });
     }
 
     @Override
