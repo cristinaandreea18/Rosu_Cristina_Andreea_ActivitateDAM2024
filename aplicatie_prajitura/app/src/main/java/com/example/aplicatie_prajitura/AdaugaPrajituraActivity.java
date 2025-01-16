@@ -16,6 +16,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.room.Room;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -100,6 +103,28 @@ public class AdaugaPrajituraActivity extends AppCompatActivity {
                     writer.close();
                     output.close();
                     file.close();
+
+                    CheckBox esteDisponibilOnline = findViewById(R.id.idDisponibilOnline);
+                    boolean dispOnline = esteDisponibilOnline.isChecked();
+                    if(dispOnline) {
+                        //FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        //DatabaseReference myRef = database.getReference("prajituri");
+
+                        try{
+                            FileOutputStream file2;
+                            file2 =openFileOutput("PrajituriDispobileOnline.txt",MODE_APPEND);
+                            OutputStreamWriter output2 = new OutputStreamWriter(file2);
+                            BufferedWriter writer2 = new BufferedWriter(output2);
+                            writer2.write(p1.toString());
+                            writer2.close();
+                            output2.close();
+                            file2.close();
+                        }catch (FileNotFoundException e) {
+                            throw new RuntimeException(e);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
                 } catch (FileNotFoundException e) {
                     throw new RuntimeException(e);
                 } catch (IOException e) {
